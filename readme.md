@@ -73,3 +73,4 @@ $ git status
 	  master
 
 # git checkout master   切换分支
+# git merge  合并指定分支到当前分支，（一般先从自己的分支切换到主分支，然后再合并内容）
