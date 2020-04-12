@@ -72,3 +72,4 @@ $ git status
 	  dev
 	  master
 
+# git checkout master   切换分支
