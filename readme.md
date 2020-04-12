@@ -30,7 +30,45 @@ $ git status
 ============================================
 4
 一句命令直接保存文件夹里的全部
-git commit --all -m
+# git commit --all -m
 ============================================
 5 
-git diff  查看具体修改了什么内容
+# git diff  查看具体修改了什么内容
+
+# git log   查看历史版本
+	commit a38dcd4cd865c0d135b2428ad0edb90a246cfd36 // commit  版本号
+	Author: hanyu <yuhan3935@gmail.com>
+	Date:   Sun Apr 12 12:16:02 2020 +0800
+	
+	    1.js第3版
+	
+	commit 2f4fb8837645b7f89a9793455d920687e3bd7c9e
+	Author: hanyu <yuhan3935@gmail.com>
+	Date:   Sun Apr 12 12:15:09 2020 +0800
+	
+	    1.js第二版
+
+# git log --pretty=oneline 查看历史版本精简版 
+	b078465719a781c71fd1bab88900931259ab7435 (HEAD -> master) readme 添加一句保存
+	a38dcd4cd865c0d135b2428ad0edb90a246cfd36 1.js第3版
+	2f4fb8837645b7f89a9793455d920687e3bd7c9e 1.js第二版
+	72f3d38107a9be6626eff1e3576db8ec07ce8a1f 这是添加readme.md的第4次说明信息(一句命令保存代码到仓储)。
+
+# git reset 版本回退（回到过去版本，也可以回到过去版本后，再通过commit id 返回新的版本）
+#  git reset --hard +commit id
+	HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100，一般可以用commit id来指定返回的版本
+ git reset --hard 2f4fb8837645b7f89a9793455d920687e3bd7c9e
+
+# git reflog  记录每一次命令
+	if回退到了某个版本，关掉了电脑，第二天早上就后悔了，想恢复到新版本，找不到新版本的commit id时，用git reflog 找到每一次的命令，然后根据commit id 返回最新版本
+	
+	
+# git checkout -b dev    创建dev分支，然后切换到dev分支	
+	等同于 git branch dev
+		  git checkout dev
+# git branch命令会列出所有分支，当前分支前面会标一个*号。
+	$ git branch
+	* ccc
+	  dev
+	  master
+
