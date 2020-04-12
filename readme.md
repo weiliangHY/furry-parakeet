@@ -95,10 +95,23 @@ $ git status
 + 	git push github个人地址 master
 -   git push【地址】 分支
 -   
-# 把远程分支的数据下载到本地（*本地需要先初始化一个仓储）
+# 把远程分支的数据下载到本地（*本地需要先初始化一个仓储）【地址】：http 
 	## git pull 【地址】 分支  // 常用
 	## git clone 【地址】 //(第一次下载的时候会应用，但多次执行会覆盖本地内容)
 # 
 # 
-# ssh
-# 创建公钥 和 私钥   $ ssh -keygen -t rsa -c "yuhan3935@gmail.com"
+# GitHub   提交代码到gitHub上（上传到服务器） 【地址】：ssh
+## 	  创建公钥 和 私钥   $ ssh -keygen -t rsa -c "yuhan3935@gmail.com"
+## 	  
+## 	 以ssh的方式上传到服务器
+ ## 	  git push git@github.com:weiliangHY/furry-parakeet.git 分支名
+ ##  下载到本地
+ ##       git pull git@github.com:weiliangHY/furry-parakeet.git 分支名
+ ##       
+ ## git remote add origin git@github.com:weiliangHY/furry-parakeet.git
+		##  git push origin 分支名
+		##  git pull origin 分支名
+## git remote add origin git@github.com:weiliangHY/furry-parakeet.git
+## git push origin -u 分支名 //(自动关联和服务器上指定的分支)
+##     git push
+##     git pull
