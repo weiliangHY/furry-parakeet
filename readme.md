@@ -62,33 +62,43 @@ $ git status
 # git reflog  记录每一次命令
 	if回退到了某个版本，关掉了电脑，第二天早上就后悔了，想恢复到新版本，找不到新版本的commit id时，用git reflog 找到每一次的命令，然后根据commit id 返回最新版本
 	
-	
-# git checkout -b dev    创建dev分支，然后切换到dev分支	
-	等同于 git branch dev
-		  git checkout dev
-# git branch命令会列出所有分支，当前分支前面会标一个*号。
-	$ git branch
+#======================================================
+# 创建分支：git branch <name>
+
+# 切换分支：git checkout <name>或者git switch <name>
+
+# 创建并切换到新的dev分支 （合并上述两步）
+
+	## git checkout -b dev
+		等于 ###1.  git branch dev
+			 ###2.  git checkout dev
+	## git switch -c dev
+#  切换分支
+	## git checkout master
+	## git switch master
+
+# 查看分支：git branch
+	列出所有分支，当前分支前面会标一个*号。
 	* ccc
 	  dev
 	  master
 
-# git checkout master   切换分支
-# git merge  合并指定分支到当前分支，（一般先从自己的分支切换到主分支，然后再合并内容）
-=======
-# git branch -D ccc   合并完成之后，删除掉自己开的‘ccc’分支
-# =======================
-# Git鼓励大量使用分支：
+# 合并某分支到当前分支：git merge <name>
+	（一般先从自己的分支切换到主分支，然后再合并内容）
+	* 合并如果有冲突时，需要手动处理，处理后再次提交
 
-查看分支：git branch
-
-创建分支：git branch <name>
-
-切换分支：git checkout <name>或者git switch <name>
-
-创建+切换分支：git checkout -b <name>或者git switch -c <name>
-
-合并某分支到当前分支：git merge <name>
-
-删除分支：git branch -d <name>
-
-# =======================
+# 删除分支：git branch -D <name>
+	git branch -D ccc   合并完成之后，删除掉自己开的‘ccc’分支
+# ===========================================================
+# ===========================================================
+# GitHub   提交代码到gitHub上（上传到服务器） 【地址】：http 
++ 	git push github个人地址 master
+-   git push【地址】 分支
+-   
+# 把远程分支的数据下载到本地（*本地需要先初始化一个仓储）
+	## git pull 【地址】 分支  // 常用
+	## git clone 【地址】 //(第一次下载的时候会应用，但多次执行会覆盖本地内容)
+# 
+# 
+# ssh
+# 创建公钥 和 私钥   $ ssh -keygen -t rsa -c "yuhan3935@gmail.com"
